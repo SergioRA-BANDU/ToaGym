@@ -48,15 +48,15 @@ const CONFIG = {
   achievements: [
     {
       title: "SubCampeón Nacional Júnior 2025",
-      description: "Medalla de plata en campeonato nacional amateur. - Ares Lois"
+      description: "Medalla de plata en campeonato nacional júnior. - Ares Lois"
     },
     {
       title: "Campeón Nacional Júnior 2024",
-      description: "Medalla de oro en campeonato nacional amateur. - Ares Lois"
+      description: "Medalla de oro en campeonato nacional júnior. - Ares Lois"
     },
     {
       title: "Campeón Nacional Júnior 2023",
-      description: "Medalla de oro en campeonato nacional amateur. - Ares Lois"
+      description: "Medalla de oro en campeonato nacional júnior. - Ares Lois"
     },
   ],
 
