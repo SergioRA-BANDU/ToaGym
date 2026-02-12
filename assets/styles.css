@@ -1,0 +1,608 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --primary: #e63946;
+    --bg-dark: #0b0b0b;
+    --bg-light: #f4f4f4;
+    --text-light: #ffffff;
+    --container: 1200px;
+}
+
+/* GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-light);
+    color: #222;
+}
+
+.container {
+    max-width: var(--container);
+    margin: auto;
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+.logo {
+    font-family: 'Bebas Neue';
+    font-size: 1.8rem;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--primary);
+}
+
+.nav-cta {
+    padding: 8px 18px;
+    background: var(--primary);
+    border-radius: 6px;
+}
+
+/* HERO */
+
+.hero {
+    height: 100vh;
+    background: url('images/hero.jpg') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue';
+    font-size: 5rem;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    opacity: 0.85;
+}
+
+.hero-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* BUTTONS */
+
+.btn-primary {
+    background: var(--primary);
+    padding: 14px 32px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: black;
+}
+
+.big {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.section.dark {
+    background: var(--bg-dark);
+    color: white;
+}
+
+.section h2 {
+    font-family: 'Bebas Neue';
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.dark .card {
+    background: #1a1a1a;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/* GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.cta-box {
+    background: var(--bg-dark);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+/* ANIMATION */
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        padding: 15px 25px;
+    }
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    font-size: 26px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+.schedule-wrapper {
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.schedule-table th {
+    background: var(--primary);
+    color: white;
+    padding: 14px;
+}
+
+.schedule-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.schedule-table .time {
+    font-weight: bold;
+    background: #eee;
+}
+
+/* COLORES POR TIPO DE CLASE */
+.class-boxeo-iniciación { background: #fee2e2 !important; color: #dc2626; font-weight: 600; }
+.class-boxeo-infantil { background: #dbeafe !important; color: #1d4ed8; font-weight: 600; }
+.class-boxeo-veteranos { background: #f3e8ff !important; color: #7c3aed; font-weight: 600; }
+.class-clases-privadas { background: #fef3c7 !important; color: #d97706; font-weight: 600; }
+.class-defensa-personal-kidu { background: #d1fae5 !important; color: #059669; font-weight: 600; }
+.class-kickboxing { background: #bae6fd !important; color: #0c4a6e; font-weight: 600; }
+.class-empty { background: transparent !important; color: #6b7280; }
+
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.map-container {
+    margin-top: 30px;
+    width: 100%;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.location-address {
+    margin-top: 10px;
+    opacity: 0.85;
+    font-size: 1.1rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .map-container {
+        height: 320px;
+    }
+}
+
+/* ========================================
+   REDES SOCIALES - NUEVO DISEÑO
+   ======================================== */
+.rrss-section {
+  background: linear-gradient(180deg, #000 0%, #111 100%);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.rrss-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.rrss-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  gap: 20px;
+  background: #181818;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.rrss-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.8);
+}
+
+.rrss-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rrss-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.2);
+}
+
+.rrss-right h3 {
+  color: #ffffff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.rrss-right p {
+  color: #b3b3b3;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+/* BOTONES SOCIALES */
+.btn-social {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  font-family: Inter, sans-serif;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.btn-social.instagram {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.btn-social.facebook {
+  background: linear-gradient(135deg, #1877f2 0%, #166fe5 100%);
+}
+
+.btn-social:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* FOOTER */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+.footer-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 0.9rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #222;
+  color: white;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: var(--primary);
+  transform: scale(1.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .rrss-section {
+    padding: 40px 15px;
+  }
+  
+  .rrss-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: none;
+}
+
+.logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: white;
+  letter-spacing: 2px;
+}
+
+/* MÓVIL: logo más pequeño */
+@media (max-width: 768px) {
+  .logo-img {
+    width: 40px;
+    height: 40px;
+  }
+  .logo-text {
+    font-size: 1.5rem;
+  }
+}
+
+.header-brand {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.header-brand:hover {
+  opacity: 0.85;
+}
+
+/* MODAL ZOOM GALERÍA */
+.gallery-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.gallery img {
+  cursor: zoom-in;
+  transition: transform 0.2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.close-modal {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 10000;
+}

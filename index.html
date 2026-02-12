@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title id="gymTitle"></title>
+
+  <meta name="description"
+    content="Gimnasio profesional de Boxeo, Kickboxing, K1 y defensa personal. Entrena como un competidor.">
+
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.jpg">
+  <link rel="shortcut icon" href="assets/images/favicon.jpg">
+  <script defer src="config.js"></script>
+  <script defer src="assets/script.js"></script>
+
+</head>
+
+<body>
+
+  <header class="navbar" id="navbar">
+
+    <!--<div class="logo" id="gymName"></div>-->
+    <div class="header-brand">
+      <img src="assets/images/hero.jpg" alt="Toa Gym" class="logo-img">
+      <div class="logo-text" id="gymName">TOA GYM</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#services">Clases</a></li>
+        <li><a href="#schedule">Horarios</a></li>
+        <li><a href="#achievements">Logros</a></li>
+        <li><a href="#location">Ubicación</a></li>
+        <li><a href="#contact" class="nav-cta">Apúntate</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content fade-up">
+      <h1 id="heroTitle"></h1>
+      <p id="heroSubtitle"></p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Empieza Hoy</a>
+        <a href="#services" class="btn-secondary">Ver Clases</a>
+      </div>
+    </div>
+
+  </section>
+
+
+  <section id="about" class="section">
+
+    <div class="container fade-up">
+      <h2>Sobre Nosotros</h2>
+      <p id="aboutText"></p>
+    </div>
+
+  </section>
+
+
+  <section id="services" class="section dark">
+
+    <div class="container fade-up">
+      <h2>Disciplinas</h2>
+      <div class="cards" id="servicesContainer"></div>
+    </div>
+
+  </section>
+
+  <section id="schedule" class="section">
+
+    <div class="container fade-up">
+      <h2>Horarios</h2>
+
+      <div class="schedule-wrapper">
+        <table class="schedule-table" id="scheduleTable"></table>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="achievements" class="section">
+
+    <div class="container fade-up">
+      <h2>Últimos Logros</h2>
+      <div class="cards" id="achievementsContainer"></div>
+    </div>
+
+  </section>
+
+
+  <section id="gallery" class="section dark">
+
+    <div class="container fade-up">
+      <h2>El Gimnasio</h2>
+      <div class="gallery" id="galleryContainer"></div>
+    </div>
+
+  </section>
+
+  <section id="location" class="section dark">
+
+    <div class="container fade-up">
+
+      <h2>Dónde Estamos</h2>
+
+      <p class="location-address" id="gymAddress"></p>
+
+      <div class="map-container">
+        <iframe id="mapFrame" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <a id="openMapsBtn" class="btn-primary" target="_blank">
+        Cómo llegar
+      </a>
+    </div>
+
+  </section>
+
+  <section id="contact" class="section">
+
+    <div class="container contact fade-up">
+
+      <h2>Únete al Equipo</h2>
+
+      <div class="contact-grid">
+
+        <div>
+          <h3>Información</h3>
+          <p><strong>Teléfono:</strong> <span id="phone"></span></p>
+          <p><strong>Email:</strong> <span id="email"></span></p>
+          <p><strong>Horario:</strong> <span id="hours"></span></p>
+        </div>
+
+        <div class="cta-box">
+          <h3>Prueba tu primera clase</h3>
+          <p>Contacta con nosotros y empieza a entrenar con profesionales.</p>
+          <a id="ctaContact" class="btn-primary big">Contactar</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BOTÓN WHATSAPP -->
+  <a id="whatsappBtn" class="whatsapp">💬</a>
+
+  <!-- REDES SOCIALES -->
+  <section class="rrss-section">
+    <div class="rrss-container">
+      <div class="rrss-card">
+        <div class="rrss-left">
+          <img src="assets/images/instagram-preview.jpg" alt="Instagram Toa Gym" class="rrss-avatar">
+        </div>
+        <div class="rrss-right">
+          <h3>Síguenos en Instagram</h3>
+          <p>@toagym • Fotos de entrenos, combates y el día a día del gimnasio.</p>
+          <a id="instaBtn" class="btn-social instagram" target="_blank">Abrir Instagram</a>
+        </div>
+      </div>
+
+      <div class="rrss-card">
+        <div class="rrss-left">
+          <img src="assets/images/facebook-preview.png" alt="Facebook Toa Gym" class="rrss-avatar">
+        </div>
+        <div class="rrss-right">
+          <h3>Síguenos en Facebook</h3>
+          <p>Horarios, avisos importantes y fotos de eventos del club.</p>
+          <a id="fbBtn" class="btn-social facebook" target="_blank">Abrir Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UN SOLO FOOTER LIMPIO -->
+  <footer>
+    <div class="footer-inner">
+      <p id="footerText"></p>
+      <!--<div class="footer-social">
+        <a id="instaBtnFooter" href="#" target="_blank" title="Instagram">📱</a>
+        <a id="fbBtnFooter" href="#" target="_blank" title="Facebook">👍</a>
+      </div>
+    </div>-->
+  </footer>
+
+</body>
+
+</html>
