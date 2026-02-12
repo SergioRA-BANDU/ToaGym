@@ -139,28 +139,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
 
-    function renderSchedule() {
-        const table = document.getElementById('scheduleTable');
-        let header = '<tr><th>Hora</th>';
+    function renderScheduleBlocks() {
+        const container = document.getElementById('scheduleBlocks');
+        let html = '';
 
-        CONFIG.schedule.days.forEach(day => {
-            header += `<th>${day}</th>`;
-        });
-        header += '</tr>';
+        const dayNames = CONFIG.schedule.days.slice(1); // Sin "Hora"
+        const slots = CONFIG.schedule.slots;
 
-        let body = '';
-        CONFIG.schedule.slots.forEach(slot => {
-            body += `<tr><td class="time">${slot.time}</td>`;
-            slot.classes.forEach(c => {
-                // ¡CLASE CSS EXACTA!
-                const className = c ? `class-${c.toLowerCase().replace(/ /g, '-')}` : 'class-empty';
-                body += `<td class="${className}">${c || ''}</td>`;
+        dayNames.forEach((day, dayIndex) => {
+            html += `<div class="schedule-day">
+      <div class="day-header">${day}</div>`;
+
+            slots.forEach(slot => {
+                const className = slot.classes[dayIndex]; // +1 por "Hora"
+                if (className) {
+                    const classCss = `class-${className.toLowerCase().replace(/ /g, '-')}`;
+                    html += `
+          <div class="schedule-slot">
+            <span class="time-badge">${slot.time}</span>
+            <div class="${classCss} class-block">${className}</div>
+          </div>`;
+                }
             });
-            body += '</tr>';
+
+            html += `</div>`;
         });
 
-        table.innerHTML = header + body;
+        container.innerHTML = html;
     }
-    renderSchedule();
 
+    // Llamar nueva función
+    renderScheduleBlocks();
 });
