@@ -72,7 +72,7 @@ const CONFIG = {
   },
 
   schedule: {
-    days: ["Hora", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+    days: ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
 
     slots: [
       {
