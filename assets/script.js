@@ -170,4 +170,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Llamar nueva función
     renderScheduleBlocks();
+
+    // MENÚ HAMBURGUESA
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+
+    mobileMenuBtn.addEventListener('click', function () {
+        mainNav.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+
+        // Prevenir scroll body cuando menú abierto
+        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // CERRAR MENÚ al hacer clic en enlace
+    document.querySelectorAll('#mainNav a').forEach(link => {
+        link.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // CERRAR al hacer clic fuera
+    document.addEventListener('click', function (e) {
+        if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            mainNav.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+
 });
