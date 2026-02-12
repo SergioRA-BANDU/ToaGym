@@ -85,7 +85,11 @@ const CONFIG = {
       },
       {
         time: "11:00",
-        classes: ["", "Defensa personal KIDU", "", "Defensa personal KIDU", "", "Boxeo veteranos"]
+        classes: ["", "", "", "", "", "Boxeo veteranos"]
+      },
+      {
+        time: "11:30",
+        classes: ["", "Defensa personal KIDU", "", "Defensa personal KIDU", "", ""]
       },
       {
         time: "14:00",
@@ -101,7 +105,7 @@ const CONFIG = {
       },
       {
         time: "18:00",
-        classes: ["Kickboxing", "", "Boxeo iniciación", "", "Defensa personal KIDU", ""]
+        classes: ["Kickboxing", "Defensa personal KIDU Infantil", "Boxeo iniciación", "Defensa personal KIDU Infantil", "Defensa personal KIDU", ""]
       },
       {
         time: "19:00",
