@@ -37,12 +37,12 @@ const CONFIG = {
       title: "Defensa personal KIDU",
       description: "Defensa personal y combate táctico.",
       image: "assets/images/kidu.jpeg"
-    },
-    {
+    }
+    /*{
       title: "MMA Y BJJ",
       description: "Combate completo con técnicas de lucha y defensa personal.",
       image: "assets/images/mma.jpg"
-    }
+    }*/
   ],
 
   achievements: [
