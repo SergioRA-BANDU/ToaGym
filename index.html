@@ -17,57 +17,63 @@
   <script defer src="config.js"></script>
   <script defer src="assets/script.js"></script>
 
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ExerciseGym",
-  "name": "<?= CONFIG.gymName ?>",
-  "alternateName": "Gimnasio Toa Avilés",
-  "url": "https://toagym.com",
-  "image": [
-    "https://toagym.com/assets/images/boxing.jpg",
-    "https://toagym.com/assets/images/kidsboxing.jpg"
-  ],
-  "telephone": "<?= CONFIG.phone ?>",
-  "email": "<?= CONFIG.email ?>",
-  "priceRange": "€€",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "<?= CONFIG.location.address.split(',')[0] ?>",
-    "addressLocality": "Avilés",
-    "addressRegion": "Asturias",
-    "postalCode": "<?= CONFIG.location.address.split(',')[1]?.trim() ?>",
-    "addressCountry": "ES"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 43.5511758,
-    "longitude": -5.9173503
-  },
-  "openingHours": "Mo-Fr 10:00-22:00, Sa 11:00-13:30",
-  "areaServed": "Avilés, Asturias",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Clases Boxeo Avilés",
-    "itemListElement": [
-      <?php foreach(CONFIG.services as $service): ?>
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "<?= $service['title'] ?>",
-          "description": "<?= $service['description'] ?>"
+  <script>
+    (function () {
+      const CONFIG = window.CONFIG; // Config ya cargada
+
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "ExerciseGym",
+        "name": CONFIG.gymName,
+        "alternateName": "Gimnasio Toa Avilés",
+        "url": "https://toagym.com",
+        "image": [
+          `https://toagym.com/${CONFIG.services[0].image}`,
+          `https://toagym.com/${CONFIG.services[1].image}`
+        ],
+        "telephone": CONFIG.phone,
+        "email": CONFIG.email,
+        "priceRange": "€€",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": CONFIG.location.address.split(',')[0].trim(),
+          "addressLocality": "Avilés",
+          "addressRegion": "Asturias",
+          "postalCode": CONFIG.location.address.split(',')[1]?.trim() || "33402",
+          "addressCountry": "ES"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 43.5511758,
+          "longitude": -5.9173503
+        },
+        "openingHours": "Mo-Fr 10:00-22:00, Sa 11:00-13:30",
+        "areaServed": ["Avilés", "Asturias"],
+        "sameAs": [
+          CONFIG.social.instagram,
+          CONFIG.social.facebook
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Clases Deporte Contacto Avilés",
+          "itemListElement": CONFIG.services.map(service => ({
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": service.title,
+              "description": service.description
+            }
+          }))
         }
-      }<?= end($services) ? '' : ',' ?>
-      <?php endforeach; ?>
-    ]
-  },
-  "sameAs": [
-    "<?= CONFIG.social.instagram ?>",
-    "<?= CONFIG.social.facebook ?>"
-  ]
-}
-</script>
+      };
+
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    })();
+  </script>
+
 
 </head>
 
