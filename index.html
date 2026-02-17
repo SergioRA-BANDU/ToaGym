@@ -18,28 +18,26 @@
   <script defer src="assets/script.js"></script>
 
   <script>
-    (function () {
-      const CONFIG = window.CONFIG; // Config ya cargada
-
+    document.addEventListener('DOMContentLoaded', function () {
       const schema = {
         "@context": "https://schema.org",
         "@type": "ExerciseGym",
-        "name": CONFIG.gymName,
-        "alternateName": "Gimnasio Toa Avilés",
+        "name": "Toa Gym",
+        "alternateName": "Gimnasio Boxeo Avilés",
         "url": "https://toagym.com",
-        "image": [
-          `https://toagym.com/${CONFIG.services[0].image}`,
-          `https://toagym.com/${CONFIG.services[1].image}`
-        ],
-        "telephone": CONFIG.phone,
-        "email": CONFIG.email,
+        "telephone": "+34638467455",
+        "email": "gimnasiotoa@gmail.com",
         "priceRange": "€€",
+        "image": [
+          "https://toagym.com/assets/images/boxing.jpg",
+          "https://toagym.com/assets/images/kidsboxing.jpg"
+        ],
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": CONFIG.location.address.split(',')[0].trim(),
+          "streetAddress": "C. de la Magdalena, 17",
           "addressLocality": "Avilés",
           "addressRegion": "Asturias",
-          "postalCode": CONFIG.location.address.split(',')[1]?.trim() || "33402",
+          "postalCode": "33402",
           "addressCountry": "ES"
         },
         "geo": {
@@ -50,28 +48,25 @@
         "openingHours": "Mo-Fr 10:00-22:00, Sa 11:00-13:30",
         "areaServed": ["Avilés", "Asturias"],
         "sameAs": [
-          CONFIG.social.instagram,
-          CONFIG.social.facebook
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Clases Boxeo Avilés",
-          "itemListElement": CONFIG.services.map(service => ({
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": service.title,
-              "description": service.description
-            }
-          }))
-        }
+          "https://www.instagram.com/toagym/",
+          "https://www.facebook.com/TOA.GYM"
+        ]
       };
 
       const script = document.createElement('script');
       script.type = 'application/ld+json';
       script.textContent = JSON.stringify(schema);
       document.head.appendChild(script);
-    })();
+
+      console.log('✅ Schema Toa Gym CARGADO correctamente');
+    });
+  </script>
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+  })();
   </script>
 
 
