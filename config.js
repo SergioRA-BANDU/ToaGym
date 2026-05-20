@@ -2,10 +2,10 @@ const CONFIG = {
 
   gymName: "Toa Gym",
 
-  phone: "666",
+  phone: "",
   email: "gimnasiotoa@gmail.com",
 
-  whatsapp: "666",
+  whatsapp: "",
 
   openHours: "Lunes a Viernes: 10:00 - 22:00 | Sábado: 11:00 - 13:30",
 
